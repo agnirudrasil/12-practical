@@ -2,6 +2,8 @@
 
 Commit solutions to 12th practical questions here
 
+This branch contains the original solutions, updated solutions with tests can be found in the `main` branch
+
 # Intructions
 
 Follow these instructions if you want to contribute solutions:
