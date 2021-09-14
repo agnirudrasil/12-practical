@@ -1,0 +1,5 @@
+f=open('try.txt','r').read()
+out=f.replace(" ","#")
+final=open("final.txt",'w')
+final.write(out)
+final.close()
