@@ -14,3 +14,5 @@ def count_is(path='./STORY.txt'):
     text = open(path,'r').read()
     return text.count('is')
 
+print(f"Not starting with A: {not_starting_A()}")
+print(f"No. of 'is' in the file: {count_is()}")
