@@ -2,7 +2,7 @@
 
 Commit solutions to 12th practical questions here
 
-# Intructions
+# Instructions
 
 Follow these instructions if you want to contribute solutions:
 * Solutions to questions can be found in the [src/](src/) directory.
