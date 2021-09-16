@@ -4,9 +4,6 @@ and display the corresponding name, salary from the file. Display an appropriate
 not found.
 """
 import csv
-from xml.etree.ElementPath import find
-
-from sqlalchemy import false
 
 
 def create_csv():
