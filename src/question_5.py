@@ -6,7 +6,7 @@ def linear_search(li,element):
     return -1
 
 #Binary search
-def binary_serach(arr, element):
+def binary_search(arr, x):
     low = 0
     high = len(arr) - 1
     mid = 0
