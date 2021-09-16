@@ -23,7 +23,7 @@ def create_csv():
 create_csv()
 
 
-def find_employee():
+def find_employee(empno):
     try:
         with open("employee.csv", "r") as f:
             creader = csv.reader(f)
@@ -37,8 +37,8 @@ def find_employee():
 
 
 # Driver Code
-results = find_employee()
 empno = input("Please enter employee number to find: ")
+results = find_employee(empno)
 if results is not None:
     print(
         f"Name of the employee is {results[0]} and their salary is {results[1]}")

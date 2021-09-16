@@ -1,32 +1,34 @@
 #Linear search
 def linear_search(li,element):
-    index=-1
-    for i in li:
-        index+=1
-        if i==element:
-            return index
-            break
-    else:
-        return 0
+    for i in range(len(li)):
+        if li[i]==element:
+            return i
+    return -1
 
 #Binary search
-def binary_search(li, element):
-    li.sort()
-    start=0
-    end=len(li)
-    while True:
-        index=(start+end)//2
-        mid=li[index]
-
-        if mid == element:            
-            return index
-        if mid<element:
-            start+=1
-        if mid>element:
-            end-=1
-
-        if start==end:
-            return -1
+def binary_serach(arr, element):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+ 
+    while low <= high:
+ 
+        mid = (high + low) // 2
+ 
+        # If x is greater, ignore left half
+        if arr[mid] < x:
+            low = mid + 1
+ 
+        # If x is smaller, ignore right half
+        elif arr[mid] > x:
+            high = mid - 1
+ 
+        # means x is present at mid
+        else:
+            return mid
+ 
+    # If we reach here, then the element was not present
+    return -1
 
 
 n=input("Enter numeric values seperated by spaces : ").split()
