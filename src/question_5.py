@@ -7,6 +7,7 @@ def linear_search(li,element):
 
 #Binary search
 def binary_search(arr, x):
+    arr.sort()
     low = 0
     high = len(arr) - 1
     mid = 0
@@ -37,19 +38,3 @@ for i in range(0,len(n)) :
     n[i]=int(n[i])
 print(binary_search(n,r))
 print(linear_search(n,r))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
