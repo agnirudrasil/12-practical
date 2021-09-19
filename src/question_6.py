@@ -6,8 +6,8 @@ def generate(n=5):
         x=round(a+(b-a)*random.random(),2)
         list1.append(x)
     print(list1)
-    global val
-   
+    
+    global val   
     val=float(input("Enter value to be removed: "))
     temp(val)
        
