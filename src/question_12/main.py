@@ -26,7 +26,6 @@ try:
         datas = pickle.load(f)
         for data in datas:
             rpos = f.tell()
-            print(data)
             if data["empNo"] == "123":
                 data['Salary'] += 5000
                 f.seek(rpos)
