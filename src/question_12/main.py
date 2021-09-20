@@ -14,21 +14,26 @@ names = ["Ram", "Ramesh", "Rohan", "Sai",
 """
 Create file emp.dat
 """
-with open("emp.dat", "wb") as f:
-    ch = randint(0, 9)
-    pickle.dump([{"empNo": "123" if i == "ch" else str(randint(100, 999)),
-                  "ename": "Ajay" if i == ch else choice(names),
-                  "Salary": randint(10000, 99999)}
-                for i in range(10)], f)
 
-try:
-    with open("emp.dat", "rb+") as f:
-        while True:
-            rpos = f.tell()
-            data = pickle.load(f)
-            if data["empNo"] == "123":
-                data['Salary'] += 5000
-                f.seek(rpos)
-                pickle.dump(data, f)
-except EOFError:
-    print("")
+with open("emp.dat", "wb") as f:
+    data = [{"empNo": randint(100, 999),
+                  "ename": names[i],
+                  "Salary": randint(10000, 99999)}
+                for i in range(9)]
+    data.append({"empNo":123, "ename": "Ajay", "salary":5000})
+    pickle.dump(data, f)
+
+"""
+Read file emp.data
+"""
+
+with open("emp.dat", "rb+") as f:
+    data = pickle.load(f)
+    for i, entry in enumerate(data): #enumerate gives the index of list as first variable and the item at that index as the second variable
+        if entry["empNo"] == 123: 
+                data[i]["salary"] += 5000
+                break
+    f.seek(0)
+    pickle.dump(data, f)
+                
+
