@@ -5,8 +5,9 @@ def find_from_file(rollno):
     with open("question_9.bin","rb") as file:
         entries_list,entry = [], file.read().decode().split("\n")
         # appending data to list
-        for i in entry[0:-2]:
+        for i in entry:
             entries_list.append(str(i).split(','))
+        entries_list.pop()
         print(f"Number of entries: {len(entry)-1}")
         # iterating over the list to find name
         for items in entries_list:
