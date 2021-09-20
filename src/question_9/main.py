@@ -3,24 +3,18 @@ def find_from_file(rollno):
 
     # opening file
     with open("question_9.bin","rb") as file:
-        entries_list = []
-        counter = 0
-        entries = file.read().decode()
-        entry = entries.split("\n")
+        entries_list,entry = [], file.read().decode().split("\n")
         # appending data to list
         for i in entry:
             entries_list.append(str(i).split(','))
-            counter += 1
         entries_list.pop()
-        counter -= 1
-        print(f"Number of entries: {counter}")
+        print(f"Number of entries: {len(entry)-1}")
         # iterating over the list to find name
-        a = 0
         for items in entries_list:
             if str(rollno) == items[0]:
-                a = 1
                 print(f"Roll.No {rollno} belongs to:{items[1]}")
-        if a == 0:
+                break
+        else:
             print("Roll.No not found") 
 
 # Details
