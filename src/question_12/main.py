@@ -16,16 +16,16 @@ Create file emp.dat
 """
 with open("emp.dat", "wb") as f:
     ch = randint(0, 9)
-    pickle.dump([{"empNo": "123" if i == "ch" else str(randint(100, 999)),
-                  "ename": "Ajay" if i == ch else choice(names),
+    pickle.dump([{"empNo": "123" if i == 3 else str(randint(100, 999)),
+                  "ename": "Ajay" if i == 3 else choice(names),
                   "Salary": randint(10000, 99999)}
                 for i in range(10)], f)
 
 try:
-    with open("emp.dat", "rb+") as f:
-        while True:
+    with open("emp.dat", "rb+") as f:        
+        datas = pickle.load(f)
+        for data in datas:
             rpos = f.tell()
-            data = pickle.load(f)
             if data["empNo"] == "123":
                 data['Salary'] += 5000
                 f.seek(rpos)
